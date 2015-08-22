@@ -17,10 +17,13 @@
 ### prototypes
 
   - title
-  - image
   - catch_copy
   - concept
   - user_id
+
+### thumbnail
+  - image
+  - prototype_id
 
 ### tags
 
@@ -39,4 +42,5 @@
              has_many comments
 
   prototypes has_many comments  
+             has_many images
              has_and_belongs_to_many tags
