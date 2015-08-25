@@ -1,0 +1,16 @@
+class UsersController < ApplicationController
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    current_user.update(update_params)
+    redirect_to controller: 'top', action: 'index'
+  end
+
+  private
+  def update_params
+    params.require(:user).permit(:user_name, :email, :member, :profile, :works)
+  end
+end

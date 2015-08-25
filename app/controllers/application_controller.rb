@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:user_name, :image, :member, :profile, :work]
-    devise_parameter_sanitizer.for(:sign_in) << [:user_name, :image, :member, :profile, :work]
-    devise_parameter_sanitizer.for(:account_update) << [:user_name, :image, :member, :profile, :work]
+    devise_parameter_sanitizer.for(:sign_up) << [:user_name, :image, :member, :profile, :works]
+    devise_parameter_sanitizer.for(:sign_in) << [:user_name, :image, :member, :profile, :works]
+    devise_parameter_sanitizer.for(:account_update) << [:user_name, :image, :member, :profile, :works]
   end
 
   def after_sign_out_path_for(resouce)
