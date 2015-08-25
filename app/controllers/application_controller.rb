@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_in) << [:user_name, :image, :member, :profile, :work]
     devise_parameter_sanitizer.for(:account_update) << [:user_name, :image, :member, :profile, :work]
   end
+
+  def after_sign_out_path_for(resouce)
+    '/users/sign_in'
+  end
 end
