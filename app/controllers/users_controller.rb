@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(update_params)
-    redirect_to controller: 'top', action: 'index'
+    redirect_to root_path
   end
 
   private
