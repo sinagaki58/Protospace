@@ -9,6 +9,11 @@ class PrototypesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @prototype = Prototype.find(params[:id])
+    @user = @prototype.user
+  end
+
   private
   def create_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id).merge(user_id: current_user.id)
