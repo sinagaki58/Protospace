@@ -1,20 +1,29 @@
 class PrototypesController < ApplicationController
 
+  before_action :set_prototype, except: [:new, :create]
+
   def new
     @prototype = Prototype.new
   end
 
   def create
-    Prototype.create(create_params)
-    redirect_to root_path
+    @prototype = current_user.new(create_params)
+    if @prototype.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
-    @prototype = Prototype.find(params[:id])
   end
 
   private
   def create_params
-    params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id)
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 end
