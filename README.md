@@ -38,9 +38,9 @@
 
 ## association
 
-  users      has_many prototypes  
+  users      has_many prototypes
              has_many comments
 
-  prototypes has_many comments  
+  prototypes has_many comments
              has_many images
              has_and_belongs_to_many tags
