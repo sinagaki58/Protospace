@@ -25,5 +25,8 @@
         =f.text_area :concept, placeholder: "concept", cols: "30", rows: "4"
       .col-md-12
         %h4 Tag List
+        .row
+          .col-md-3
+            =text_field_tag 'prototype[prototype_list]', @prototype.prototype_list, placeholder: "Web Design"
     .row.text-center.proto-btn
       %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Publish
