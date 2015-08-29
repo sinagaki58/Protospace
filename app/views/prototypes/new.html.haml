@@ -27,6 +27,10 @@
         %h4 Tag List
         .row
           .col-md-3
-            =text_field_tag 'prototype[prototype_list]', @prototype.prototype_list, placeholder: "Web Design"
+            =f.text_field :tag1, placeholder: "Web Design"
+          .col-md-3
+            =f.text_field :tag2, placeholder: "UI"
+          .col-md-3
+            =f.text_field :tag3, placeholder: "Appliccation"
     .row.text-center.proto-btn
       %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Publish

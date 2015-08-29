@@ -8,6 +8,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = current_user.prototypes.new(create_params)
+    @prototype.tag_list.add("#{params[:prototype][:tag1]}", "#{params[:prototype][:tag2]}", "#{params[:prototype][:tag3]}")
     if @prototype.save
       redirect_to root_path
     else

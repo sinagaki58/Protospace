@@ -4,7 +4,7 @@ class Prototype < ActiveRecord::Base
 
   acts_as_taggable_on :labels
   acts_as_taggable
-
   acts_as_ordered_taggable_on :prototypes
 
+  attr_accessor :tag1, :tag2, :tag3
 end
