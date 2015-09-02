@@ -3,13 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'prototypes/ranking#index'
   resources :users, only: [:show, :edit, :update]
-  resources :prototypes, only: [:new, :create, :show] do
-    collection do
-      get 'newest'
-    end
+  resources :prototypes, only: [:new, :create, :show]
+  namespace :prototypes do
+    resources :ranking, only: :index
+    resources :newest, only: :index
   end
   resources :tags, only: [:index, :show]
-  resources :ranking, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
