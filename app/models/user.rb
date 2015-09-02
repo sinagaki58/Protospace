@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :prototypes
 
   mount_uploader :avatar, AvatarUploader
+
+  paginates_per 8
 end
