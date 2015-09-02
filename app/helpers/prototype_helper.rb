@@ -8,7 +8,7 @@ module PrototypeHelper
     @prototype.thumbnails.main.first.image
   end
 
-  def sub_image
+  def sub_images
     @prototype.thumbnails.sub
   end
 end
