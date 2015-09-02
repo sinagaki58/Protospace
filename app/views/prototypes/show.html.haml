@@ -22,9 +22,9 @@
       = image_tag main_image, class: 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
-        - sub_image.each do |sub|
+        - sub_image.each do |image|
           %li.list-group-item
-            = image_tag sub.image, class: 'img-responsive'
+            = image_tag image.image, class: 'img-responsive'
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
