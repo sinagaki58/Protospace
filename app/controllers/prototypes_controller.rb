@@ -1,6 +1,10 @@
 class PrototypesController < ApplicationController
 
-  before_action :set_prototype, except: [:new, :create]
+  before_action :set_prototype, except: [:new, :create, :newest]
+
+  def newest
+    @prototypes = Prototype.order('created_at DESC')
+  end
 
   def new
     @prototype = Prototype.new

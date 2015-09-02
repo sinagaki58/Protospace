@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'prototypes/ranking#index'
   resources :users, only: [:show, :edit, :update]
-  resources :prototypes, only: [:new, :create, :show]
+  resources :prototypes, only: [:new, :create, :show] do
+    collection do
+      get 'newest'
+    end
+  end
   resources :tags, only: [:index, :show]
   resources :ranking, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
