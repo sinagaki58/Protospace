@@ -22,7 +22,7 @@
   - user_id
 
 ### thumbnail
-  - image
+  - name
   - prototype_id
 
 ### tags

@@ -5,7 +5,7 @@ module PrototypeHelper
   end
 
   def main_image
-    @prototype.thumbnails.main.first.image
+    @prototype.thumbnails.main.first.name
   end
 
   def sub_images
