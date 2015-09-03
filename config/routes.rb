@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'prototypes/ranking#index'
   resources :users, only: [:show, :edit, :update]
   resources :prototypes, only: [:new, :create, :show]
+  namespace :prototypes do
+    resources :comments, only: :create
+  end
   resources :tags, only: [:index, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
