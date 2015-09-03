@@ -46,5 +46,6 @@
       Comments
       %span.num (#{@comments.count})
     .col-md-8
-      = render partial: "prototypes/comment", collection: @comments
+      #comments
+        = render partial: "prototypes/comment", collection: @comments
       = render partial: "prototypes/form"
