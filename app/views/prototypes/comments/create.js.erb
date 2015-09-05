@@ -1,5 +1,0 @@
-$('#comment_field').val('')
-$('#comments').html(
-  '<%= j(render partial: 'prototypes/comment', collection: @comments) %>'
-);
-$('.proto-comments .num').html("(<%= @comments.count %>)");
