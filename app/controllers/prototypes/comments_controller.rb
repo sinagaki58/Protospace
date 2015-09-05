@@ -4,7 +4,6 @@ class Prototypes::CommentsController < ApplicationController
     current_user.comments.create(comment_params)
     @prototype = Prototype.find(comment_params[:prototype_id])
     @comments = @prototype.comments
-    @comment_count = @comments.count
   end
 
 private
