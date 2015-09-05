@@ -19,6 +19,7 @@ class PrototypesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @prototype.comments
+    @comment_count = @comments.count
   end
 
   private
