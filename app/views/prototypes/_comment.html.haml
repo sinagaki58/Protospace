@@ -1,10 +1,9 @@
 .media
   .media-left
-    %a{href: "#"}
-      %img.media-object{alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: "#{comment.user.avatar}", style: "width: 64px; height: 64px;"}/
+    = link_to (image_tag comment.user.avatar, alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", style: "width: 64px; height: 64px;", class: 'media-object') , "/users/#{ comment.user.id }"
   .media-body
     %h4#top-aligned-media.media-heading
-      #{comment.user.user_name}
-      %a.anchorjs-link{href: "#top-aligned-media"}
+      #{ comment.user.user_name }
+      %a.anchorjs-link{ href: "#top-aligned-media" }
         %span.anchorjs-icon
-    %p #{comment.text}
+    %p #{ comment.text }
