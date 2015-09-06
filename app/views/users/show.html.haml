@@ -6,7 +6,7 @@
           %img.media-object{:alt => "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", :src => "#{current_user.avatar}", :style => "width: 64px; height: 64px;"}/
       .media-body
         %h4#top-aligned-media.media-heading
-          Top aligned media
+          #{ current_user.user_name}
           %span.label.label-default.project-number
             29
             %i Projects
