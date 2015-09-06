@@ -7,7 +7,7 @@
             %img.media-object{alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: "#{current_user.avatar}", style: "width: 64px; height: 64px;"}/
         .media-body
           %h4#top-aligned-media.media-heading
-            Top aligned media
+            #{ @prototype.title}
           .proto-user
             = link_to "by #{proto_user.user_name}", "/users/#{proto_user.id}"
             %span.degree #{proto_user.member}
@@ -22,7 +22,7 @@
       = image_tag main_image, class: 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
-        - sub_image.each do |image|
+        - sub_images.each do |image|
           %li.list-group-item
             = image_tag image.name, class: 'img-responsive'
   .row.proto-description

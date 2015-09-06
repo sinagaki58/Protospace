@@ -1,15 +1,15 @@
 .col-sm-4.col-md-3.proto-content
   .thumbnail
     = link_to prototype_path(prototype) do
-      = image_tag "sample.png"
+      = image_tag prototype.thumbnails.main.first.name
       .caption
-        %h3 #{prototype.title}
+        %h3 #{ prototype.title }
         .proto-meta
           .proto-user
-            = link_to "by #{prototype.user.user_name}", "#"
+            = link_to "by #{ prototype.user.user_name }", "/users/#{prototype.user.id}"
           .proto-posted
-            #{prototype.created_at.strftime("%b %d")}
+            #{ prototype.created_at.strftime("%b %d") }
         %ul.proto-tag-list.list-inline
           - prototype.tags.each do |tag|
             %li
-              =link_to "#{tag.name}", tag_path(tag.id), class: "btn btn-default"
+              =link_to "#{ tag.name }", tag_path(tag.id), class: "btn btn-default"
