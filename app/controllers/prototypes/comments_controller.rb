@@ -14,7 +14,7 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:text, :prototype_id, :user_id)
+    params.require(:comment).permit(:text, :prototype_id)
   end
 
 end
