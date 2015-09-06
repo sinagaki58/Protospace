@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'prototypes/ranking#index'
   resources :users, only: [:show, :edit, :update]
-  resources :prototypes, only: [:new, :create, :show]
+  resources :prototypes, only: [:new, :create, :show, :index]
   namespace :prototypes do
     resources :comments, only: :create
   end

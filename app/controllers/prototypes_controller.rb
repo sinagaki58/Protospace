@@ -1,8 +1,8 @@
 class PrototypesController < ApplicationController
 
-  before_action :set_prototype, except: [:new, :create, :newest]
+  before_action :set_prototype, except: [:new, :create, :index]
 
-  def newest
+  def index
     @prototypes = Prototype.order(created_at: :desc).page(params[:page])
   end
 
