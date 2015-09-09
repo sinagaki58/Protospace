@@ -23,6 +23,7 @@ class PrototypesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @prototype.comments
+    @likes = @prototype.likes
   end
 
   private

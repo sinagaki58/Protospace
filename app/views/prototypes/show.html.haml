@@ -16,7 +16,7 @@
       %button.btn.btn-default
         = link_to image_tag("icon_heart.svg"), likes_path, method: :post
         Like
-        %span.num 20
+        %span.num #{ @likes.count }
   .row
     .col-md-9
       = image_tag main_image, class: 'img-responsive'
