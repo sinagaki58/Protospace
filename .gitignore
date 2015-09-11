@@ -11,3 +11,12 @@
 /log/*
 !/log/.keep
 /tmp
+vendor/bundle
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+settings.yml
+development.yml
+production.yml
+test.yml
