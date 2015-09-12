@@ -5,22 +5,25 @@
         =f.text_field :title, placeholder: "Title", class: "proto-new-title"
     .row
       .col-md-12
-        .cover-image-upload
+        .cover-image-upload.img_input
           = f.fields_for :thumbnails do |thumbnail|
             = thumbnail.file_field :name
             = thumbnail.hidden_field :status, value: :main
+            = image_tag "", width: "100%", height: "100%", style: "display: none;"
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
-            .image-upload
+            .image-upload.img_input
               = f.fields_for :thumbnails do |thumbnail|
                 = thumbnail.file_field :name
                 = thumbnail.hidden_field :status, value: :sub
+                = image_tag "", width: "100%", height: "100%", style: "display: none;"
           %li.list-group-item.col-md-4
-            .image-upload
+            .image-upload.img_input
               = f.fields_for :thumbnails do |thumbnail|
                 = thumbnail.file_field :name
                 = thumbnail.hidden_field :status, value: :sub
+                = image_tag "", width: "100%", height: "100%", style: "display: none;"
           %li.list-group-item.col-md-4
             .image-upload-plus
               %span +
