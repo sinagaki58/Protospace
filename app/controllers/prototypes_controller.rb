@@ -25,6 +25,17 @@ class PrototypesController < ApplicationController
     @comments = @prototype.comments
   end
 
+  def edit
+  end
+
+  def update
+    @prototype.update(create_params) if @prototype.user_id == current_user.id
+    redirect_to root_path
+  end
+
+  def destroy
+  end
+
   private
   def create_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id, thumbnails_attributes: [:name, :prototype_id, :status]).merge(tag_list: params[:prototype][:tag])
