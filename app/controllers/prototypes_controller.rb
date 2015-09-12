@@ -34,6 +34,8 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
+    @prototype.destroy if @prototype.user_id == current_user.id
+    redirect_to root_path
   end
 
   private
