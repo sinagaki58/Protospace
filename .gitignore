@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+settings.local.yml
+config/settings
+vendor/bundle
+settings.yml
