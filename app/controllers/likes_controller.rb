@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
   def create
-    Like.create(create_params)
+    current_user.likes.create(create_params)
     count = Like.where(prototype_id: params[:prototype_id]).count
     render json: { count: count }
   end
@@ -16,6 +16,6 @@ class LikesController < ApplicationController
 private
 
   def create_params
-    params.permit(:prototype_id).merge(user_id: current_user.id)
+    params.permit(:prototype_id)
   end
 end
