@@ -1,6 +1,6 @@
 class Prototypes::RankingController < ApplicationController
 
   def index
-    @prototypes = Prototype.all.page(params[:page])
+    @prototypes = Prototype.order(likes_count: :desc).page(params[:page])
   end
 end
