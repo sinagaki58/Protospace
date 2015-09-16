@@ -20,6 +20,8 @@ function like_function(button, heart, sum) {
       button.removeClass("decrement").addClass("increment")
       heart.attr("src", "/assets/icon_heart.svg")
       sum.text(data.count)
+    }).fail(function(XMLHttpRequest) {
+      alert(XMLHttpRequest.status + "エラー")
     })
   } else {
     $.ajax({
@@ -34,6 +36,8 @@ function like_function(button, heart, sum) {
       button.removeClass("increment").addClass("decrement")
       heart.attr("src", "/assets/icon_heart_red.svg")
       sum.text(data.count)
+    }).fail(function(XMLHttpRequest) {
+      alert(XMLHttpRequest.status + "エラー")
     })
   }
 }
