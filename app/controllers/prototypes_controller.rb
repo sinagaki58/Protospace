@@ -23,6 +23,7 @@ class PrototypesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @prototype.comments
+    @like_exists = @prototype.likes.where(user_id: current_user.id).exists?
   end
 
   private
