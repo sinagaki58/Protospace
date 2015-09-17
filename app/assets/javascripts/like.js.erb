@@ -1,0 +1,43 @@
+$(document).on('ready', function() {
+  var $heart = $("#like-heart");
+  $("#like-button").on("click", function(){
+    var $likeSum = $("#like-sum")
+    like_function($(this), $heart, $likeSum)
+  })
+})
+
+function like_function(button, heart, sum) {
+  if (button.hasClass("decrement")){
+    $.ajax({
+      url: "/likes/" + button.data('id'),
+      type: "DELETE",
+      dataType: "json",
+      data: {
+        prototype_id: button.data('id'),
+      }
+    })
+    .done(function(data){
+      button.removeClass("decrement").addClass("increment")
+      heart.attr("src", "/assets/icon_heart.svg")
+      sum.text(data.count)
+    }).fail(function(XMLHttpRequest) {
+      alert(XMLHttpRequest.status + "エラー")
+    })
+  } else {
+    $.ajax({
+      url: "/likes",
+      type: "POST",
+      dataType: "json",
+      data: {
+        prototype_id: button.data('id'),
+      }
+    })
+    .done(function(data){
+      button.removeClass("increment").addClass("decrement")
+      heart.attr("src", "/assets/icon_heart_red.svg")
+      sum.text(data.count)
+    }).fail(function(XMLHttpRequest) {
+      alert(XMLHttpRequest.status + "エラー")
+    })
+  }
+}
